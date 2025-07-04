@@ -28,15 +28,24 @@ function createParticles() {
 }
 
 // Enhanced Typing Animation
-function typeWriter() {
-  const texts = ["UI/UX Designer", "Computer Scientist", "Problem Solver", "Creative Thinker", "Full-Stack Developer"]
+function enhancedTypeWriter() {
+  const texts = [
+    "UI/UX Designer",
+    "Project Analyst",
+    "Problem Solver",
+    "Frontend Developer",
+    "Creative Thinker",
+    "Project Initiator",
+  ]
   let textIndex = 0
   let charIndex = 0
   let isDeleting = false
   const typingElement = document.getElementById("typing-text")
+  const colors = ["#3b82f6", "#8b5cf6", "#10b981", "#f59e0b", "#ef4444", "#06b6d4"]
 
   function type() {
     const currentText = texts[textIndex]
+    const currentColor = colors[textIndex]
 
     if (isDeleting) {
       typingElement.textContent = currentText.substring(0, charIndex - 1)
@@ -46,10 +55,14 @@ function typeWriter() {
       charIndex++
     }
 
+    // Change color for each role
+    typingElement.style.color = currentColor
+    typingElement.style.textShadow = `0 0 20px ${currentColor}50`
+
     let typeSpeed = isDeleting ? 50 : 100
 
     if (!isDeleting && charIndex === currentText.length) {
-      typeSpeed = 2500
+      typeSpeed = 3000
       isDeleting = true
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false
@@ -63,54 +76,74 @@ function typeWriter() {
   type()
 }
 
-// Project Image Carousel
-function initProjectCarousels() {
-  const projectCards = document.querySelectorAll(".project-card")
+// Project Modal Functionality
+function initProjectModal() {
+  const modal = document.getElementById("projectModal")
+  const modalImage = document.getElementById("modalImage")
+  const closeModal = document.querySelector(".close-modal")
+  const projectItems = document.querySelectorAll(".project-item")
 
-  projectCards.forEach((card) => {
-    const images = card.querySelectorAll(".project-image")
-    const indicators = card.querySelectorAll(".indicator")
-    let currentSlide = 0
-    let slideInterval
+  // Open modal when project item is clicked
+  projectItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const projectNumber = item.getAttribute("data-project")
+      const imageSrc = `images/pr${projectNumber}.jpg`
 
-    function showSlide(index) {
-      images.forEach((img, i) => {
-        img.classList.toggle("active", i === index)
-      })
-      indicators.forEach((ind, i) => {
-        ind.classList.toggle("active", i === index)
-      })
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % images.length
-      showSlide(currentSlide)
-    }
-
-    function startSlideshow() {
-      slideInterval = setInterval(nextSlide, 3000)
-    }
-
-    function stopSlideshow() {
-      clearInterval(slideInterval)
-    }
-
-    // Auto-play slideshow
-    startSlideshow()
-
-    // Pause on hover
-    card.addEventListener("mouseenter", stopSlideshow)
-    card.addEventListener("mouseleave", startSlideshow)
-
-    // Manual navigation
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener("click", () => {
-        currentSlide = index
-        showSlide(currentSlide)
-        stopSlideshow()
-        setTimeout(startSlideshow, 5000) // Restart after 5 seconds
-      })
+      modalImage.src = imageSrc
+      modalImage.alt = `Project ${projectNumber}`
+      modal.style.display = "block"
+      document.body.style.overflow = "hidden" // Prevent background scrolling
     })
+  })
+
+  // Close modal when X is clicked
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none"
+    document.body.style.overflow = "auto" // Restore scrolling
+  })
+
+  // Close modal when clicking outside the image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none"
+      document.body.style.overflow = "auto" // Restore scrolling
+    }
+  })
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.style.display === "block") {
+      modal.style.display = "none"
+      document.body.style.overflow = "auto" // Restore scrolling
+    }
+  })
+}
+
+// Animate project items on scroll
+function animateProjectItems() {
+  const projectItems = document.querySelectorAll(".project-item")
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = "1"
+            entry.target.style.transform = "translateY(0)"
+          }, index * 100)
+        }
+      })
+    },
+    {
+      threshold: 0.1,
+    },
+  )
+
+  projectItems.forEach((item) => {
+    item.style.opacity = "0"
+    item.style.transform = "translateY(30px)"
+    item.style.transition = "all 0.6s ease"
+    observer.observe(item)
   })
 }
 
@@ -269,83 +302,6 @@ function parallaxEffect() {
   })
 }
 
-// Add scroll-triggered animations for project cards
-function animateProjectCards() {
-  const projectCards = document.querySelectorAll(".project-card")
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.style.opacity = "1"
-            entry.target.style.transform = "translateY(0)"
-          }, index * 200)
-        }
-      })
-    },
-    {
-      threshold: 0.1,
-    },
-  )
-
-  projectCards.forEach((card) => {
-    card.style.opacity = "0"
-    card.style.transform = "translateY(50px)"
-    card.style.transition = "all 0.6s ease"
-    observer.observe(card)
-  })
-}
-
-// Enhanced Typing Animation with Multiple Effects
-function enhancedTypeWriter() {
-  const texts = [
-    "UI/UX Designer",
-    "Computer Scientist",
-    "Problem Solver",
-    "Creative Thinker",
-    "Full-Stack Developer",
-    "Digital Artist",
-  ]
-  let textIndex = 0
-  let charIndex = 0
-  let isDeleting = false
-  const typingElement = document.getElementById("typing-text")
-  const colors = ["#3b82f6", "#8b5cf6", "#10b981", "#f59e0b", "#ef4444", "#06b6d4"]
-
-  function type() {
-    const currentText = texts[textIndex]
-    const currentColor = colors[textIndex]
-
-    if (isDeleting) {
-      typingElement.textContent = currentText.substring(0, charIndex - 1)
-      charIndex--
-    } else {
-      typingElement.textContent = currentText.substring(0, charIndex + 1)
-      charIndex++
-    }
-
-    // Change color for each role
-    typingElement.style.color = currentColor
-    typingElement.style.textShadow = `0 0 20px ${currentColor}50`
-
-    let typeSpeed = isDeleting ? 50 : 100
-
-    if (!isDeleting && charIndex === currentText.length) {
-      typeSpeed = 3000
-      isDeleting = true
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false
-      textIndex = (textIndex + 1) % texts.length
-      typeSpeed = 500
-    }
-
-    setTimeout(type, typeSpeed)
-  }
-
-  type()
-}
-
 // Animated Counter for Stats
 function animateCounters() {
   const counters = document.querySelectorAll(".stat-number")
@@ -457,12 +413,42 @@ function magneticEffect() {
   })
 }
 
+// Mobile Navigation Toggle
+function initMobileNavigation() {
+  const mobileToggle = document.getElementById("mobile-menu-toggle")
+  const navLinks = document.getElementById("nav-links")
+
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener("click", () => {
+      mobileToggle.classList.toggle("active")
+      navLinks.classList.toggle("active")
+    })
+
+    // Close mobile menu when clicking on a link
+    const navLinkItems = navLinks.querySelectorAll("a")
+    navLinkItems.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileToggle.classList.remove("active")
+        navLinks.classList.remove("active")
+      })
+    })
+
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!mobileToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        mobileToggle.classList.remove("active")
+        navLinks.classList.remove("active")
+      }
+    })
+  }
+}
+
 // Initialize all functions
 document.addEventListener("DOMContentLoaded", () => {
   createParticles()
   // Replace the old typeWriter with enhanced version
   enhancedTypeWriter()
-  initProjectCarousels()
+  initProjectModal() // Add this line
   smoothScroll()
   navbarScrollEffect()
   fadeInOnScroll()
@@ -470,11 +456,11 @@ document.addEventListener("DOMContentLoaded", () => {
   handleContactForm()
   enhancedParticleInteraction()
   parallaxEffect()
-  animateCounters()
   createButtonParticles()
   heroParallax()
   magneticEffect()
+  initMobileNavigation() // Add this line
 
-  // Initialize project card animations after a short delay
-  setTimeout(animateProjectCards, 500)
+  // Initialize project animations after a short delay
+  setTimeout(animateProjectItems, 500) // Update this line
 })
