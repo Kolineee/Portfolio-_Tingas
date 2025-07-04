@@ -20,7 +20,12 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">Marie Tingas</a>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -70,24 +75,11 @@
                 <span class="cursor">|</span>
             </div>
             <p class="hero-description">
-                Crafting digital experiences that blend creativity with functionality. 
-                Passionate about solving complex problems through innovative design and clean code.
+                Creating purposeful designs, seamless experiences, and smart solutions. 
+                Driven by strategy, innovation, and a passion for turning ideas into impact.
             </p>
             
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="50">0</span>
-                    <span class="stat-label">Projects</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="3">0</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="100">0</span>
-                    <span class="stat-label">Happy Clients</span>
-                </div>
-            </div>
+            
             
             <div class="hero-actions">
                 <a href="#projects" class="cta-primary">
@@ -117,21 +109,21 @@
     
     <!-- Social Links -->
     <div class="hero-social">
-        <a href="#" class="social-item">
+        <a href="https://github.com/Kolineee" target="_blank" class="social-item">
             <i class="fab fa-github"></i>
             <span class="social-tooltip">GitHub</span>
         </a>
-        <a href="#" class="social-item">
+        <a href="https://www.linkedin.com/in/marie-colleen-tingas-a909a8369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-item">
             <i class="fab fa-linkedin"></i>
             <span class="social-tooltip">LinkedIn</span>
         </a>
-        <a href="#" class="social-item">
-            <i class="fab fa-dribbble"></i>
-            <span class="social-tooltip">Dribbble</span>
+        <a href="https://www.facebook.com/share/12Hn76LnMfm/" target="_blank" class="social-item">
+            <i class="fab fa-facebook"></i>
+            <span class="social-tooltip">Facebook</span>
         </a>
-        <a href="#" class="social-item">
-            <i class="fab fa-behance"></i>
-            <span class="social-tooltip">Behance</span>
+        <a href="mailto:mariecolleen049@gmail.com?subject=Hello%20Marie&body=Hi%20Marie,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20with%20you." class="social-item">
+            <i class="fas fa-envelope"></i>
+            <span class="social-tooltip">Email Me</span>
         </a>
     </div>
 </section>
@@ -141,13 +133,13 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-image">
-                <div class="profile-img"></div>
+                <div class="profile-img" style="background-image: url('images/cme.jpg');"></div>
             </div>
             <div class="about-text">
-                <p>Hello! I'm Marie Colleen Tingas, a passionate Computer Science student with a specialization in UI/UX Design. I combine technical expertise with creative design thinking to create digital experiences that are both functional and beautiful.</p>
-                <p>My journey in technology began with a curiosity about how things work, which led me to pursue Computer Science. Along the way, I discovered my passion for user experience design and the art of creating intuitive, user-centered digital solutions.</p>
-                <p>I believe that great design is not just about how something looks, but how it works. My goal is to bridge the gap between technology and human needs, creating solutions that are not only technically sound but also delightful to use.</p>
-            </div>
+    <p>Hello! I'm Marie Colleen Tingas, a passionate UI/UX Designer and Project Analyst who thrives on creating purposeful designs and seamless digital experiences. I combine strategic thinking with creative problem-solving to turn innovative ideas into impactful solutions.</p>
+    <p>As a Computer Science student specializing in user experience design, I've developed expertise in frontend development, project analysis, and creative thinking. My journey has been driven by a passion for understanding user needs and translating them into intuitive, functional designs that make a difference.</p>
+    <p>I believe in the power of strategic innovation and purposeful design. Whether I'm initiating new projects, solving complex problems, or crafting user interfaces, my goal is always to create solutions that are not only technically sound but also meaningful and impactful for users and businesses alike.</p>
+</div>
         </div>
     </section>
 
@@ -159,25 +151,16 @@
                 <h3><i class="fas fa-code"></i> Programming</h3>
                 <div class="skill-item">
                     <div class="skill-name">
-                        <span>JavaScript</span>
-                        <span>92%</span>
+                        <span>HTML</span>
+                        <span>90%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="92"></div>
+                        <div class="skill-progress" data-width="90"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
-                        <span>Python</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="88"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Java</span>
+                        <span>CSS</span>
                         <span>85%</span>
                     </div>
                     <div class="skill-bar">
@@ -186,11 +169,29 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
-                        <span>React</span>
-                        <span>90%</span>
+                        <span>Python</span>
+                        <span>20%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="90"></div>
+                        <div class="skill-progress" data-width="20"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>PHP</span>
+                        <span>50%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="50"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Java</span>
+                        <span>20%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="20"></div>
                     </div>
                 </div>
             </div>
@@ -200,37 +201,46 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>UI/UX Design</span>
-                        <span>96%</span>
+                        <span>95%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="96"></div>
+                        <div class="skill-progress" data-width="95"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Figma</span>
-                        <span>94%</span>
+                        <span>85%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="94"></div>
+                        <div class="skill-progress" data-width="85"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
-                        <span>Adobe Creative Suite</span>
-                        <span>89%</span>
+                        <span>FlutterFlow</span>
+                        <span>60%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="89"></div>
+                        <div class="skill-progress" data-width="60"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Canva</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Prototyping</span>
-                        <span>92%</span>
+                        <span>80%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="92"></div>
+                        <div class="skill-progress" data-width="80"></div>
                     </div>
                 </div>
             </div>
@@ -240,37 +250,46 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Git & GitHub</span>
-                        <span>87%</span>
+                        <span>80%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="87"></div>
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>MySQL</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Database Design</span>
-                        <span>84%</span>
+                        <span>50%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="84"></div>
+                        <div class="skill-progress" data-width="50"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Responsive Design</span>
-                        <span>95%</span>
+                        <span>60%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="95"></div>
+                        <div class="skill-progress" data-width="60"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>User Research</span>
-                        <span>91%</span>
+                        <span>86%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="91"></div>
+                        <div class="skill-progress" data-width="86"></div>
                     </div>
                 </div>
             </div>
@@ -278,142 +297,55 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects fade-in">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <!-- Project 1: E-Commerce Platform (Web) -->
-            <div class="project-card">
-                <div class="project-images">
-                    <div class="project-image active" style="background-image: url('/placeholder.svg?height=250&width=400&text=E-Commerce+Home')"></div>
-                    <div class="project-image" style="background-image: url('/placeholder.svg?height=250&width=400&text=Product+Page')"></div>
-                    <div class="project-image" style="background-image: url('/placeholder.svg?height=250&width=400&text=Shopping+Cart')"></div>
-                    <div class="image-indicators">
-                        <div class="indicator active" data-slide="0"></div>
-                        <div class="indicator" data-slide="1"></div>
-                        <div class="indicator" data-slide="2"></div>
-                    </div>
-                    <div class="project-overlay">
-                        <i class="fas fa-eye" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                </div>
-                <div class="project-type">Web Application</div>
-                <div class="project-content">
-                    <h3 class="project-title">E-Commerce Platform</h3>
-                    <p class="project-description">A comprehensive e-commerce solution with modern design, advanced filtering, shopping cart functionality, and seamless checkout process. Features include user authentication, product management, and payment integration.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Stripe API</span>
-                        <span class="tech-tag">UI/UX</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2: Task Management App (Web) -->
-            <div class="project-card">
-                <div class="project-images">
-                    <div class="project-image active" style="background-image: url('/placeholder.svg?height=250&width=400&text=Task+Dashboard')"></div>
-                    <div class="project-image" style="background-image: url('/placeholder.svg?height=250&width=400&text=Project+View')"></div>
-                    <div class="project-image" style="background-image: url('/placeholder.svg?height=250&width=400&text=Calendar+View')"></div>
-                    <div class="image-indicators">
-                        <div class="indicator active" data-slide="0"></div>
-                        <div class="indicator" data-slide="1"></div>
-                        <div class="indicator" data-slide="2"></div>
-                    </div>
-                    <div class="project-overlay">
-                        <i class="fas fa-eye" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                </div>
-                <div class="project-type">Web Application</div>
-                <div class="project-content">
-                    <h3 class="project-title">Task Management System</h3>
-                    <p class="project-description">A collaborative task management platform with drag-and-drop functionality, real-time updates, team collaboration features, and advanced project tracking capabilities.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Vue.js</span>
-                        <span class="tech-tag">Express.js</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Socket.io</span>
-                        <span class="tech-tag">Design</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: Data Visualization Dashboard (Web) -->
-            <div class="project-card">
-                <div class="project-images">
-                    <div class="project-image active" style="background-image: url('/placeholder.svg?height=250&width=400&text=Analytics+Dashboard')"></div>
-                    <div class="project-image" style="background-image: url('/placeholder.svg?height=250&width=400&text=Charts+View')"></div>
-                    <div class="project-image" style="background-image: url('/placeholder.svg?height=250&width=400&text=Reports+Page')"></div>
-                    <div class="image-indicators">
-                        <div class="indicator active" data-slide="0"></div>
-                        <div class="indicator" data-slide="1"></div>
-                        <div class="indicator" data-slide="2"></div>
-                    </div>
-                    <div class="project-overlay">
-                        <i class="fas fa-eye" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                </div>
-                <div class="project-type">Web Application</div>
-                <div class="project-content">
-                    <h3 class="project-title">Analytics Dashboard</h3>
-                    <p class="project-description">Interactive data visualization dashboard with real-time analytics, customizable charts, advanced filtering options, and comprehensive reporting features for business intelligence.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">D3.js</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Chart.js</span>
-                        <span class="tech-tag">UI/UX</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4: Fitness Tracker App (Mobile) -->
-            <div class="project-card">
-                <div class="project-images">
-                    <div class="project-image active" style="background-image: url('/placeholder.svg?height=250&width=400&text=Fitness+Home')"></div>
-                    <div class="project-image" style="background-image: url('/placeholder.svg?height=250&width=400&text=Workout+Tracker')"></div>
-                    <div class="project-image" style="background-image: url('/placeholder.svg?height=250&width=400&text=Progress+Stats')"></div>
-                    <div class="image-indicators">
-                        <div class="indicator active" data-slide="0"></div>
-                        <div class="indicator" data-slide="1"></div>
-                        <div class="indicator" data-slide="2"></div>
-                    </div>
-                    <div class="project-overlay">
-                        <i class="fas fa-eye" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                </div>
-                <div class="project-type">Mobile Application</div>
-                <div class="project-content">
-                    <h3 class="project-title">Fitness Tracker App</h3>
-                    <p class="project-description">A comprehensive mobile fitness application with workout tracking, progress monitoring, social features, and personalized training plans. Includes health metrics integration and achievement system.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Redux</span>
-                        <span class="tech-tag">Health Kit</span>
-                        <span class="tech-tag">Mobile UI</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-app-store"></i> App Store</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
+<section id="projects" class="projects fade-in">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-gallery">
+        <div class="project-item" data-project="1">
+            <img src="images/pr1.jpg" alt="Project 1" class="project-thumbnail">
+            <div class="project-overlay">
+                <i class="fas fa-eye"></i>
             </div>
         </div>
-    </section>
+        <div class="project-item" data-project="2">
+            <img src="images/pr2.jpg" alt="Project 2" class="project-thumbnail">
+            <div class="project-overlay">
+                <i class="fas fa-eye"></i>
+            </div>
+        </div>
+        <div class="project-item" data-project="3">
+            <img src="images/pr3.jpg" alt="Project 3" class="project-thumbnail">
+            <div class="project-overlay">
+                <i class="fas fa-eye"></i>
+            </div>
+        </div>
+        <div class="project-item" data-project="4">
+            <img src="images/pr4.jpg" alt="Project 4" class="project-thumbnail">
+            <div class="project-overlay">
+                <i class="fas fa-eye"></i>
+            </div>
+        </div>
+        <div class="project-item" data-project="5">
+            <img src="images/pr5.jpg" alt="Project 5" class="project-thumbnail">
+            <div class="project-overlay">
+                <i class="fas fa-eye"></i>
+            </div>
+        </div>
+        <div class="project-item" data-project="6">
+            <img src="images/pr6.jpg" alt="Project 6" class="project-thumbnail">
+            <div class="project-overlay">
+                <i class="fas fa-eye"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Modal -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modalImage" src="/placeholder.svg" alt="Project Image" class="modal-image">
+    </div>
+</div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact fade-in">
@@ -482,11 +414,10 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+            <a href="https://github.com/Kolineee" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/marie-colleen-tingas-a909a8369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/share/12Hn76LnMfm/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:mariecolleen049@gmail.com?subject=Hello%20Marie&body=Hi%20Marie,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20with%20you." class="social-link"><i class="fas fa-envelope"></i></a>
         </div>
         <p>&copy; 2024 Marie Colleen Tingas. All rights reserved.</p>
     </footer>
