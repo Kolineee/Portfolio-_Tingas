@@ -475,4 +475,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize project animations after a short delay
   setTimeout(animateProjectItems, 500)
 })
-  
