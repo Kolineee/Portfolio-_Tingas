@@ -76,18 +76,29 @@ function enhancedTypeWriter() {
   type()
 }
 
-// Project Modal Functionality
+// Project Modal Functionality - FIXED
 function initProjectModal() {
   const modal = document.getElementById("projectModal")
   const modalImage = document.getElementById("modalImage")
   const closeModal = document.querySelector(".close-modal")
   const projectItems = document.querySelectorAll(".project-item")
 
+  // Define file extensions for each project
+  const projectExtensions = {
+    1: "png",
+    2: "png",
+    3: "png",
+    4: "png",
+    5: "jpg",
+    6: "jpg",
+  }
+
   // Open modal when project item is clicked
   projectItems.forEach((item) => {
     item.addEventListener("click", () => {
       const projectNumber = item.getAttribute("data-project")
-      const imageSrc = `images/pr${projectNumber}.jpg`
+      const fileExtension = projectExtensions[projectNumber] || "jpg" // Default to jpg if not found
+      const imageSrc = `images/pr${projectNumber}.${fileExtension}`
 
       modalImage.src = imageSrc
       modalImage.alt = `Project ${projectNumber}`
@@ -448,7 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
   createParticles()
   // Replace the old typeWriter with enhanced version
   enhancedTypeWriter()
-  initProjectModal() // Add this line
+  initProjectModal() // Fixed function
   smoothScroll()
   navbarScrollEffect()
   fadeInOnScroll()
@@ -459,8 +470,9 @@ document.addEventListener("DOMContentLoaded", () => {
   createButtonParticles()
   heroParallax()
   magneticEffect()
-  initMobileNavigation() // Add this line
+  initMobileNavigation()
 
   // Initialize project animations after a short delay
-  setTimeout(animateProjectItems, 500) // Update this line
+  setTimeout(animateProjectItems, 500)
 })
+  
